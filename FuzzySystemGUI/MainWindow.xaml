@@ -1,0 +1,48 @@
+﻿<Window x:Class="FuzzySystemGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FuzzySystemGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="600" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label FontSize="16" HorizontalAlignment="Center" Margin="0, 20, 0, 0">Сила и направление ветра</Label>
+        <Slider x:Name="WindSlider" ValueChanged="WindSlider_ValueChanged" Minimum="-15" Maximum="15" Value="0" TickPlacement="BottomRight" Width="150" HorizontalAlignment="Center" Margin="0, 70, 0, 0"/>
+        <Label x:Name="WindSliderLabel" FontSize="16" HorizontalAlignment="Center" Margin="0, 90, 0, 0">0</Label>
+        <Label FontSize="16" HorizontalAlignment="Center" Margin="170, 70, 0, 0">15</Label>
+        <Label FontSize="16" HorizontalAlignment="Center" Margin="0, 70, 170, 0">-15</Label>
+
+        <Label Grid.Row="1" FontSize="16" HorizontalAlignment="Center" Margin="0, 20, 0, 0">Дополнительная масса самолета</Label>
+        <Slider Grid.Row="1" x:Name="WeightSlider" ValueChanged="WeightSlider_ValueChanged" Minimum="0" Maximum="3000" Value="1500" TickPlacement="BottomRight" TickFrequency="100" Width="150" HorizontalAlignment="Center" Margin="0, 70, 0, 0"></Slider>
+        <Label Grid.Row="1" x:Name="WeightSliderLabel" FontSize="16" HorizontalAlignment="Center" Margin="0, 90, 0, 0">1500</Label>
+        <Label Grid.Row="1" FontSize="16" HorizontalAlignment="Center" Margin="190, 70, 0, 0">3000</Label>
+        <Label Grid.Row="1" FontSize="16" HorizontalAlignment="Center" Margin="0, 70, 170, 0">0</Label>
+
+        <Label Grid.Row="2" FontSize="16" HorizontalAlignment="Center" Margin="0, 20, 0, 0">Наклон взлётно-посадочной полосы</Label>
+        <Slider Grid.Row="2"  x:Name="RunwayInclineSlider" ValueChanged="RunwayInclineSlider_ValueChanged" Minimum="-6" Maximum="6" Value="0" TickPlacement="BottomRight" Width="150" HorizontalAlignment="Center" Margin="0, 70, 0, 0"></Slider>
+        <Label Grid.Row="2" x:Name="RunwayInclineSliderLabel" FontSize="16" HorizontalAlignment="Center" Margin="0, 90, 0, 0">0</Label>
+        <Label Grid.Row="2" FontSize="16" HorizontalAlignment="Center" Margin="190, 70, 0, 0">6</Label>
+        <Label Grid.Row="2" FontSize="16" HorizontalAlignment="Center" Margin="0, 70, 170, 0">-6</Label>
+        
+        <Label Grid.Column="1" FontSize="16" HorizontalAlignment="Center" Margin="0, 20, 0, 0">Положение закрылков</Label>
+        <TextBox Grid.Column="1" x:Name="FlapValue" IsReadOnly="True" FontSize="16" Width="200" Height="30" TextAlignment="Center" HorizontalAlignment="Center" Margin="0, 40, 0, 0">none</TextBox>
+
+        <Label Grid.Column="1" Grid.Row="1" FontSize="16" HorizontalAlignment="Center" Margin="0, 20, 0, 0">Угол посадки</Label>
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="LandAngelValue" IsReadOnly="True" FontSize="16" Width="200" Height="30" TextAlignment="Center" HorizontalAlignment="Center" Margin="0, 40, 0, 0">none</TextBox>
+
+        <Label Grid.Column="1" Grid.Row="2" FontSize="16" HorizontalAlignment="Center" Margin="0, 20, 0, 0">Сила торможения</Label>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="BrakeValue" IsReadOnly="True" FontSize="16" Width="200" Height="30" TextAlignment="Center" HorizontalAlignment="Center" Margin="0, 40, 0, 0">none</TextBox>
+
+    </Grid>
+</Window>
